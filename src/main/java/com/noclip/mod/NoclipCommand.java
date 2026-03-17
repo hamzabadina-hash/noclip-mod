@@ -56,24 +56,3 @@ public class NoclipCommand {
         return 1;
     }
 }
-```
-
----
-
-#### `.gitignore`
-```
-.gradle/
-build/
-.idea/
-*.iml
-out/
-run/
-```
-
----
-
-### Step 3 — How to type nested file paths on GitHub
-
-When GitHub shows the filename box, just type the full path with slashes like:
-```
-src/main/java/com/noclip/mod/NoclipMod.java

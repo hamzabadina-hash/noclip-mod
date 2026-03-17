@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "noclip",
+  "version": "1.0.0",
+  "name": "NoclipMod",
+  "description": "Server-side mod to walk through walls via /noclip.",
+  "authors": ["YourName"],
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "com.noclip.mod.NoclipMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric-api": "*",
+    "minecraft": "~1.21"
+  }
+}

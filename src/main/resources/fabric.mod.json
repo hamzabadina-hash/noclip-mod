@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "id": "noclip",
+  "id": "noclip_client",
   "version": "1.0.0",
-  "name": "NoclipMod",
-  "description": "Server-side mod to walk through walls via /noclip.",
-  "authors": ["YourName"],
-  "environment": "server",
+  "name": "NoclipClient",
+  "description": "Client-side keybind to toggle noclip.",
+  "authors": ["SG_Mafia"],
+  "environment": "client",
   "entrypoints": {
-    "main": [
-      "com.noclip.mod.NoclipMod"
+    "client": [
+      "com.noclip.client.NoclipClient"
     ]
   },
   "depends": {

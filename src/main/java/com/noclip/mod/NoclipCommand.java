@@ -22,7 +22,8 @@ public class NoclipCommand {
                     source.sendError(Text.literal("Only players can use this."));
                     return 0;
                 }
-                return toggleNoclip(player, source);
+                toggleNoclip(player);
+                return 1;
             })
             .then(CommandManager.argument("target", StringArgumentType.word())
                 .requires(source -> source.hasPermissionLevel(3))
@@ -35,24 +36,24 @@ public class NoclipCommand {
                         source.sendError(Text.literal("Player '" + targetName + "' not found."));
                         return 0;
                     }
-                    return toggleNoclip(target, source);
+                    toggleNoclip(target);
+                    return 1;
                 })
             )
         );
     }
 
-    private static int toggleNoclip(ServerPlayerEntity player, ServerCommandSource source) {
+    public static void toggleNoclip(ServerPlayerEntity player) {
         UUID uuid = player.getUuid();
         if (NoclipMod.NOCLIP_PLAYERS.contains(uuid)) {
             NoclipMod.NOCLIP_PLAYERS.remove(uuid);
             player.noClip = false;
-            player.sendMessage(Text.literal("§cNoclip disabled."), false);
+            player.sendMessage(Text.literal("§cNoclip disabled."), true);
         } else {
             NoclipMod.NOCLIP_PLAYERS.add(uuid);
             player.noClip = true;
             player.fallDistance = 0f;
-            player.sendMessage(Text.literal("§aNoclip enabled."), false);
+            player.sendMessage(Text.literal("§aNoclip enabled."), true);
         }
-        return 1;
     }
 }
